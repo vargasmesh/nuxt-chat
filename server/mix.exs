@@ -24,7 +24,8 @@ defmodule Server.MixProject do
     [
       {:plug, "~> 1.14"},
       {:bandit, ">= 0.7.7"},
-      {:websock_adapter, "~> 0.5"}
+      {:websock_adapter, "~> 0.5"},
+      {:phoenix_pubsub, "~> 2.0"}
     ]
   end
 end

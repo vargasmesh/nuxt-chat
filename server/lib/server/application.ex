@@ -8,6 +8,7 @@ defmodule Server.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      {Phoenix.PubSub, name: Server.PubSub},
       {Bandit, plug: ServerWeb.Router, scheme: :http, port: 8000}
     ]
 
