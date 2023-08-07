@@ -25,12 +25,8 @@ defmodule ServerWeb.WebSocket do
     {:ok, state}
   end
 
-  def handle_info({:broadcast, message}, %{user_id: user_id} = state) do
-    if message["user_id"] == user_id do
-      {:ok, state}
-    else
-      {:push, {:text, Jason.encode!(message)}, state}
-    end
+  def handle_info({:broadcast, message}, state) do
+    {:push, {:text, Jason.encode!(message)}, state}
   end
 
   def terminate(_, state) do
