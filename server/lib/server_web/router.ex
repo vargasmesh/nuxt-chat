@@ -2,6 +2,11 @@ defmodule ServerWeb.Router do
   use Plug.Router
 
   plug :match
+
+  plug Plug.Parsers,
+    parsers: [:json],
+    json_decoder: Jason
+
   plug :dispatch
 
   get "/ws" do
