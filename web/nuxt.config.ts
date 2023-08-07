@@ -5,5 +5,10 @@ export default defineNuxtConfig({
   modules: [
     '@unocss/nuxt',
   ],
-  css: ['@unocss/reset/tailwind-compat.css']
+  css: ['@unocss/reset/tailwind-compat.css'],
+  runtimeConfig: {
+    public: {
+      wsUrl: 'ws://localhost:8000/ws',
+    }
+  },
 })

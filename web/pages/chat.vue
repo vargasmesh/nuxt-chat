@@ -51,7 +51,7 @@ function getInitials(name: string) {
 if (!user.value) {
     router.push("/")
 } else {
-    ws.value = new WebSocket("ws://192.168.31.177:8000/ws")
+    ws.value = new WebSocket(`${useRuntimeConfig().public.wsUrl}`)
     ws.value.onmessage = (e: MessageEvent) => {
         const message = JSON.parse(e.data) as WebSocketMessage
         messages.value.push(message)
