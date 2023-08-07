@@ -21,7 +21,8 @@
             </div>
         </div>
         <div class="fixed bottom-0 container mb-2 flex">
-            <input class="w-full p-4 rounded-tl rounded-bl focus:outline-none" v-model="draftMessage" />
+            <input class="w-full p-4 rounded-tl rounded-bl focus:outline-none" v-model="draftMessage"
+                @keyup.enter="onSend" />
             <button class="px-4 rounded-tr rounded-br bg-#7289da text-white text-3xl" @click="onSend">
                 <div i-heroicons-arrow-right></div>
             </button>
