@@ -10,7 +10,7 @@ defmodule ServerWeb.Router do
   plug :dispatch
 
   get "/ws" do
-    user = Enum.at(get_req_header(conn, "x-user"), 0, "Anonymous")
+    user = Map.get(conn.query_params, "user", "Anonymous")
 
     conn
     |> WebSockAdapter.upgrade(ServerWeb.WebSocket, [user: user], timeout: 3600_000)

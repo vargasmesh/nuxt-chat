@@ -67,7 +67,7 @@ function onSend() {
 if (!user.value) {
     router.push("/")
 } else {
-    ws.value = new WebSocket(`${useRuntimeConfig().public.wsUrl}`)
+    ws.value = new WebSocket(`${useRuntimeConfig().public.wsUrl}?user=${user.value}`)
     ws.value.onmessage = (e: MessageEvent) => {
         const message = JSON.parse(e.data) as WebSocketMessage
         messages.value.push(message)
