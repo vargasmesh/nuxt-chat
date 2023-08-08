@@ -32,9 +32,10 @@
 </template>
 
 <script setup lang="ts">
+
 const user = useUser()
+const ws = useWebSocket()
 const router = useRouter();
-const ws = ref<WebSocket>()
 const draftMessage = ref<string>()
 
 type WebSocketMessage = {
